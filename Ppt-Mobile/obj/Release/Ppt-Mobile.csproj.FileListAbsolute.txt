@@ -1,0 +1,24 @@
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\bin\Release\Ppt-Mobile.exe
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\bin\Release\Ppt-Mobile.pdb
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\obj\Release\ResolveAssemblyReference.cache
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\obj\Release\Ppt_Mobile.formMain.resources
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\obj\Release\Ppt_Mobile.Properties.Resources.resources
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\obj\Release\Ppt-Mobile.csproj.GenerateResource.Cache
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\obj\Release\Ppt-Mobile.exe
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\obj\Release\Ppt-Mobile.pdb
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\bin\Release\InTheHand.Net.dll
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\bin\Release\InTheHand.Net.Personal.dll
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\bin\Release\InTheHand.Net.Personal.xml
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\Ppt-Mobile\bin\Release\InTheHand.Net.xml
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\bin\Release\Ppt-Mobile.exe
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\bin\Release\Ppt-Mobile.pdb
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\bin\Release\InTheHand.Net.dll
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\bin\Release\InTheHand.Net.Personal.dll
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\bin\Release\InTheHand.Net.Personal.xml
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\bin\Release\InTheHand.Net.xml
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\obj\Release\ResolveAssemblyReference.cache
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\obj\Release\Ppt_Mobile.formMain.resources
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\obj\Release\Ppt_Mobile.Properties.Resources.resources
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\obj\Release\ppt-Mobile.csproj.GenerateResource.Cache
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\obj\Release\Ppt-Mobile.exe
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\Ppt-Mobile\obj\Release\Ppt-Mobile.pdb

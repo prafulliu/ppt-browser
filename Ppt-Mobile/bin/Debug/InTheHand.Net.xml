@@ -1,0 +1,2009 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InTheHand.Net</name>
+    </assembly>
+    <members>
+        <member name="T:InTheHand.Net.NetworkInformation.UdpStatistics">
+            <summary>
+            Provides User Datagram Protocol (UDP) statistical data. 
+            </summary>
+            <remarks>Instances of this class are returned by the <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetUdpIPv4Statistics"/> and <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetUdpIPv6Statistics"/> methods to give applications access to UDP traffic information.
+            The information in this class correlates to the management information objects described in <a href="http://www.ietf.org/rfc/rfc2013.txt"/>.
+            </remarks>
+            <seealso cref="!:System.Net.NetworkInformation.UdpStatistics"/>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UdpStatistics.DatagramsReceived">
+            <summary>
+            Gets the number of User Datagram Protocol (UDP) datagrams that were received.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of datagrams that were delivered to UDP users.</value>
+            <remarks>The number returned by this property does not include datagrams that were received but not deliverable.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UdpStatistics.DatagramsSent">
+            <summary>
+            Gets the number of User Datagram Protocol (UDP) datagrams that were sent.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of datagrams that were sent.</value>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UdpStatistics.IncomingDatagramsDiscarded">
+            <summary>
+            Gets the number of User Datagram Protocol (UDP) datagrams that were received and discarded because of port errors.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of received UDP datagrams that were discarded because there was no listening application at the destination port.</value>
+            <remarks>To find the total number of datagrams that could not be delivered, add the values that were returned by this property and the <see cref="P:InTheHand.Net.NetworkInformation.UdpStatistics.IncomingDatagramsWithErrors"/> property.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UdpStatistics.IncomingDatagramsWithErrors">
+            <summary>
+            Gets the number of User Datagram Protocol (UDP) datagrams that were received and discarded because of errors other than bad port information.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of received UDP datagrams that could not be delivered for reasons other than the lack of an application at the destination port.</value>
+            <remarks>To find the total number of datagrams that could not be delivered, add the values that were returned by this property and the <see cref="P:InTheHand.Net.NetworkInformation.UdpStatistics.IncomingDatagramsDiscarded"/> property.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.UdpStatistics.UdpListeners">
+            <summary>
+            Gets the number of local endpoints that are listening for User Datagram Protocol (UDP) datagrams.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of sockets that are listening for UDP datagrams.</value>
+            <remarks>You can use the <see cref="!:UdpClient"/> and <see cref="!:Socket"/> classes to create UDP listener applications.</remarks>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.Ping">
+            <summary>
+            Allows an application to determine whether a remote computer is accessible over the network.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message to the specified computer, and receive a corresponding ICMP echo reply message from that computer.
+            </summary>
+            <param name="hostNameOrAddress">A <see cref="T:System.String"/> that identifies the computer that is the destination for the ICMP echo message.
+            The value specified for this parameter can be a host name or a string representation of an IP address.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message, if one was received, or provides the reason for the failure, if no message was received.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.Net.IPAddress)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message to the computer that has the specified <see cref="T:System.Net.IPAddress"/>, and receive a corresponding ICMP echo reply message from that computer. 
+            </summary>
+            <param name="address">An <see cref="T:System.Net.IPAddress"/> that identifies the computer that is the destination for the ICMP echo message.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message, if one was received, or describes the reason for the failure if no message was received.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message with the specified data buffer to the computer that has the specified <see cref="T:System.Net.IPAddress"/>, and receive a corresponding ICMP echo reply message from that computer. This overload allows you to specify a time-out value for the operation. 
+            </summary>
+            <param name="address">An <see cref="T:System.Net.IPAddress"/> that identifies the computer that is the destination for the ICMP echo message.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message if one was received, or provides the reason for the failure if no message was received.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String,System.Int32)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message to the specified computer, and receive a corresponding ICMP echo reply message from that computer.
+            This overload allows you to specify a time-out value for the operation. 
+            </summary>
+            <param name="hostNameOrAddress">A <see cref="T:System.String"/> that identifies the computer that is the destination for the ICMP echo message.
+            The value specified for this parameter can be a host name or a string representation of an IP address.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message if one was received, or provides the reason for the failure if no message was received.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.Net.IPAddress,System.Int32,System.Byte[])">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message with the specified data buffer to the computer that has the specified IPAddress, and receive a corresponding ICMP echo reply message from that computer.
+            This overload allows you to specify a time-out value for the operation. 
+            </summary>
+            <param name="address">An <see cref="T:System.Net.IPAddress"/> that identifies the computer that is the destination for the ICMP echo message.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <param name="buffer">A <see cref="T:System.Byte"/> array that contains data to be sent with the ICMP echo message and returned in the ICMP echo reply message.
+            The array cannot contain more than 65,500 bytes.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message if one was received, or provides the reason for the failure if no message was received.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String,System.Int32,System.Byte[])">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message with the specified data buffer to the specified computer, and receive a corresponding ICMP echo reply message from that computer. This overload allows you to specify a time-out value for the operation. 
+            </summary>
+            <param name="hostNameOrAddress">A <see cref="T:System.String"/> that identifies the computer that is the destination for the ICMP echo message.
+            The value specified for this parameter can be a host name or a string representation of an IP address.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <param name="buffer">A <see cref="T:System.Byte"/> array that contains data to be sent with the ICMP echo message and returned in the ICMP echo reply message.
+            The array cannot contain more than 65,500 bytes.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message if one was received, or provides the reason for the failure if no message was received.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.Net.IPAddress,System.Int32,System.Byte[],InTheHand.Net.NetworkInformation.PingOptions)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message with the specified data buffer to the computer that has the specified IPAddress and receive a corresponding ICMP echo reply message from that computer. This overload allows you to specify a time-out value for the operation and control fragmentation and Time-to-Live values for the ICMP echo message packet. 
+            </summary>
+            <param name="address">An <see cref="T:System.Net.IPAddress"/> that identifies the computer that is the destination for the ICMP echo message.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <param name="buffer">A <see cref="T:System.Byte"/> array that contains data to be sent with the ICMP echo message and returned in the ICMP echo reply message.
+            The array cannot contain more than 65,500 bytes.</param>
+            <param name="options">A <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> object used to control fragmentation and Time-to-Live values for the ICMP echo message packet.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message, if one was received, or provides the reason for the failure, if no message was received.
+            The method will return PacketTooBig if the packet exceeds the Maximum Transmission Unit (MTU). </returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String,System.Int32,System.Byte[],InTheHand.Net.NetworkInformation.PingOptions)">
+            <summary>
+            Attempts to send an Internet Control Message Protocol (ICMP) echo message with the specified data buffer to the specified computer, and receive a corresponding ICMP echo reply message from that computer.
+            This overload allows you to specify a time-out value for the operation and control fragmentation and Time-to-Live values for the ICMP packet. 
+            </summary>
+            <param name="hostNameOrAddress">A <see cref="T:System.String"/> that identifies the computer that is the destination for the ICMP echo message.
+            The value specified for this parameter can be a host name or a string representation of an IP address.</param>
+            <param name="timeout">An <see cref="T:System.Int32"/> value that specifies the maximum number of milliseconds (after sending the echo message) to wait for the ICMP echo reply message.</param>
+            <param name="buffer">A <see cref="T:System.Byte"/> array that contains data to be sent with the ICMP echo message and returned in the ICMP echo reply message.
+            The array cannot contain more than 65,500 bytes.</param>
+            <param name="options">A <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> object used to control fragmentation and Time-to-Live values for the ICMP echo message packet.</param>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> object that provides information about the ICMP echo reply message, if one was received, or provides the reason for the failure, if no message was received.
+            The method will return PacketTooBig if the packet exceeds the Maximum Transmission Unit (MTU).</returns>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.PingException">
+            <summary>
+            The exception that is thrown when a <see cref="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)"/> method throws an exception.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PingException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.PingException"/> class using the specified message. 
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the error.</param>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.PingException"/> class using the specified message and inner exception. 
+            </summary>
+            <param name="message">A <see cref="T:System.String"/> that describes the error.</param>
+            <param name="innerException">The exception that causes the current exception.</param>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.PingOptions">
+            <summary>
+            Used to control how <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> data packets are transmitted.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PingOptions.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.PingOptions.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InTheHand.Net.NetworkInformation.PingOptions"/> class and sets the Time to Live and fragmentation values. 
+            </summary>
+            <param name="ttl">An Int32 value greater than zero that specifies the number of times that the <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> data packets can be forwarded.</param>
+            <param name="dontFragment">true to prevent data sent to the remote host from being fragmented; otherwise, false.</param>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingOptions.DontFragment">
+            <summary>
+            Gets or sets a <see cref="T:System.Boolean"/> value that controls fragmentation of the data sent to the remote host. 
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingOptions.Ttl">
+            <summary>
+            Gets or sets the number of routing nodes that can forward the <see cref="T:InTheHand.Net.NetworkInformation.Ping"/> data before it is discarded. 
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.PingReply">
+            <summary>
+            Provides information about the status and data resulting from a <see cref="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)"/> operation.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingReply.Address">
+            <summary>
+            Gets the address of the host that sends the Internet Control Message Protocol (ICMP) echo reply.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingReply.Buffer">
+            <summary>
+            Gets the buffer of data received in an Internet Control Message Protocol (ICMP) echo reply message. 
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingReply.Options">
+            <summary>
+            Gets the options used to transmit the reply to an Internet Control Message Protocol (ICMP) echo request. 
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingReply.RoundtripTime">
+            <summary>
+            Gets the number of milliseconds taken to send an Internet Control Message Protocol (ICMP) echo request and receive the corresponding ICMP echo reply message. 
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.PingReply.Status">
+            <summary>
+            Gets the status of an attempt to send an Internet Control Message Protocol (ICMP) echo request and receive the corresponding ICMP echo reply message. 
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPStatus">
+            <summary>
+            Reports the status of sending an Internet Control Message Protocol (ICMP) echo message to a computer. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.Success">
+            <summary>
+            The ICMP echo request succeeded; an ICMP echo reply was received. When you get this status code, the other <see cref="T:InTheHand.Net.NetworkInformation.PingReply"/> properties contain valid data. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationNetworkUnreachable">
+            <summary>
+            The ICMP echo request failed because the network that contains the destination computer is not reachable. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationHostUnreachable">
+            <summary>
+            The ICMP echo request failed because the destination computer is not reachable.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationProhibited">
+            <summary>
+            The ICMP echo request failed because contact with the destination computer is administratively prohibited.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationProtocolUnreachable">
+            <summary>
+            The ICMP echo request failed because the destination computer that is specified in an ICMP echo message is not reachable, because it does not support the packet's protocol. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationPortUnreachable">
+            <summary>
+            The ICMP echo request failed because the port on the destination computer is not available. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.NoResources">
+            <summary>
+            The ICMP echo request failed because of insufficient network resources. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.BadOption">
+            <summary>
+            The ICMP echo request failed because it contains an invalid option. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.HardwareError">
+            <summary>
+            The ICMP echo request failed because of a hardware error. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.PacketTooBig">
+            <summary>
+            The ICMP echo request failed because the packet containing the request is larger than the maximum transmission unit (MTU) of a node (router or gateway) located between the source and destination.
+            The MTU defines the maximum size of a transmittable packet. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.TimedOut">
+            <summary>
+            The ICMP echo Reply was not received within the allotted time.
+            The default time allowed for replies is 5 seconds.
+            You can change this value using the Send method that take a timeout parameter. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.BadRoute">
+            <summary>
+            The ICMP echo request failed because there is no valid route between the source and destination computers. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.TtlExpired">
+            <summary>
+            The ICMP echo request failed because its Time to Live (TTL) value reached zero, causing the forwarding node (router or gateway) to discard the packet. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.TtlReassemblyTimeExceeded">
+            <summary>
+            The ICMP echo request failed because the packet was divided into fragments for transmission and all of the fragments were not received within the time allotted for reassembly.
+            RFC 2460 (available at www.ietf.org) specifies 60 seconds as the time limit within which all packet fragments must be received. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.ParameterProblem">
+            <summary>
+            The ICMP echo request failed because a node (router or gateway) encountered problems while processing the packet header. This is the status if, for example, the header contains invalid field data or an unrecognized option. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.SourceQuench">
+            <summary>
+            The ICMP echo request failed because the packet was discarded.
+            This occurs when the source computer's output queue has insufficient storage space, or when packets arrive at the destination too quickly to be processed. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.BadDestination">
+            <summary>
+            The ICMP echo request failed because the destination IP address cannot receive ICMP echo requests or should never appear in the destination address field of any IP datagram.
+            For example, calling <see cref="M:InTheHand.Net.NetworkInformation.Ping.Send(System.String)"/> and specifying IP address "000.0.0.0" returns this status. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationUnreachable">
+            <summary>
+            The ICMP echo request failed because the destination computer that is specified in an ICMP echo message is not reachable; the exact cause of problem is unknown. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.TimeExceeded">
+            <summary>
+            The ICMP echo request failed because its Time to Live (TTL) value reached zero, causing the forwarding node (router or gateway) to discard the packet. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.BadHeader">
+            <summary>
+            The ICMP echo request failed because the header is invalid. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.UnrecognizedNextHeader">
+            <summary>
+            The ICMP echo request failed because the Next Header field does not contain a recognized value.
+            The Next Header field indicates the extension header type (if present) or the protocol above the IP layer, for example, TCP or UDP. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.IcmpError">
+            <summary>
+            The ICMP echo request failed because of an ICMP protocol error. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.DestinationScopeMismatch">
+            <summary>
+            The ICMP echo request failed because the source address and destination address that are specified in an ICMP echo message are not in the same scope. This is typically caused by a router forwarding a packet using an interface that is outside the scope of the source address.
+            Address scopes (link-local, site-local, and global scope) determine where on the network an address is valid. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.IPStatus.Unknown">
+            <summary>
+            The ICMP echo request failed for an unknown reason. 
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPGlobalStatistics">
+            <summary>
+            Provides Internet Protocol (IP) statistical data.
+            </summary>
+            <remarks>
+            This class is used by the <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIPv4GlobalStatistics"/> and <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIPv6GlobalStatistics"/> methods to return IP traffic information.
+            The Internet protocol is used to move IP packets from a source computer to a destination computer. 
+            IP also handles dividing a packet that is too large into multiple packets that are small enough for transport, in a process known as fragmentation.
+            </remarks>
+            <example>The following code code example displays IP statistics.
+            <code>
+            public static void ShowIPStatistics(NetworkInterfaceComponent version)
+            {
+                IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+                IPGlobalStatistics ipstat = null;
+                switch (version)
+                {
+                    case NetworkInterfaceComponent.IPv4:
+                        ipstat = properties.GetIPv4GlobalStatistics();
+                        Console.WriteLine("{0}IPv4 Statistics ",Environment.NewLine);
+                        break;
+                    case NetworkInterfaceComponent.IPv6:
+                        ipstat = properties.GetIPv4GlobalStatistics();
+                        Console.WriteLine("{0}IPv6 Statistics ",Environment.NewLine);
+                        break;
+                    default:
+                        throw new ArgumentException("version");
+                        break;
+                }
+                Console.WriteLine("  Forwarding enabled ...................... : {0}", 
+                    ipstat.ForwardingEnabled);
+                Console.WriteLine("  Interfaces .............................. : {0}", 
+                    ipstat.NumberOfInterfaces);
+                Console.WriteLine("  IP addresses ............................ : {0}", 
+                    ipstat.NumberOfIPAddresses);
+                Console.WriteLine("  Routes .................................. : {0}", 
+                    ipstat.NumberOfRoutes);
+                Console.WriteLine("  Default TTL ............................. : {0}", 
+                    ipstat.DefaultTtl);
+                Console.WriteLine("");    
+                Console.WriteLine("  Inbound Packet Data:");
+                Console.WriteLine("      Received ............................ : {0}", 
+                    ipstat.ReceivedPackets);
+                Console.WriteLine("      Forwarded ........................... : {0}", 
+                    ipstat.ReceivedPacketsForwarded);
+                Console.WriteLine("      Delivered ........................... : {0}", 
+                    ipstat.ReceivedPacketsDelivered);
+                Console.WriteLine("      Discarded ........................... : {0}", 
+                    ipstat.ReceivedPacketsDiscarded);
+                Console.WriteLine("      Header Errors ....................... : {0}", 
+                    ipstat.ReceivedPacketsWithHeadersErrors);
+                Console.WriteLine("      Address Errors ...................... : {0}", 
+                    ipstat.ReceivedPacketsWithAddressErrors);
+                Console.WriteLine("      Unknown Protocol Errors ............. : {0}", 
+                    ipstat.ReceivedPacketsWithUnknownProtocol);
+                Console.WriteLine("");    
+                Console.WriteLine("  Outbound Packet Data:");
+                Console.WriteLine("      Requested ........................... : {0}", 
+                    ipstat.OutputPacketRequests);
+                Console.WriteLine("      Discarded ........................... : {0}", 
+                    ipstat.OutputPacketsDiscarded);
+                Console.WriteLine("      No Routing Discards ................. : {0}", 
+                    ipstat.OutputPacketsWithNoRoute);
+                Console.WriteLine("      Routing Entry Discards .............. : {0}", 
+                    ipstat.OutputPacketRoutingDiscards);
+                Console.WriteLine("");    
+                Console.WriteLine("  Reassembly Data:");
+                Console.WriteLine("      Reassembly Timeout .................. : {0}", 
+                    ipstat.PacketReassemblyTimeout);
+                Console.WriteLine("      Reassemblies Required ............... : {0}", 
+                    ipstat.PacketReassembliesRequired);
+                Console.WriteLine("      Packets Reassembled ................. : {0}", 
+                    ipstat.PacketsReassembled);
+                Console.WriteLine("      Packets Fragmented .................. : {0}", 
+                    ipstat.PacketsFragmented);
+                Console.WriteLine("      Fragment Failures ................... : {0}", 
+                    ipstat.PacketFragmentFailures);
+                Console.WriteLine("");
+            }</code>
+            </example>
+            <seealso cref="!:System.Net.NetworkInformation.IPGlobalStatistics"/>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.DefaultTtl">
+            <summary>
+            Gets the default time-to-live (TTL) value for Internet Protocol (IP) packets.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ForwardingEnabled">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value that specifies whether Internet Protocol (IP) packet forwarding is enabled.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.NumberOfInterfaces">
+            <summary>
+            Gets the number of network interfaces.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.NumberOfIPAddresses">
+            <summary>
+            Gets the number of Internet Protocol (IP) addresses assigned to the local computer.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.NumberOfRoutes">
+            <summary>
+            Gets the number of routes in the Internet Protocol (IP) routing table.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.OutputPacketRequests">
+            <summary>
+            Gets the number of outbound Internet Protocol (IP) packets.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.OutputPacketRoutingDiscards">
+            <summary>
+            Gets the number of routes that have been discarded from the routing table.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.OutputPacketsDiscarded">
+            <summary>
+            Gets the number of transmitted Internet Protocol (IP) packets that have been discarded.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.OutputPacketsWithNoRoute">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets for which the local computer could not determine a route to the destination address.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketFragmentFailures">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets that could not be fragmented.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketReassembliesRequired">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets that required reassembly.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketReassemblyFailures">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets that were not successfully reassembled.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketReassemblyTimeout">
+            <summary>
+            Gets the maximum amount of time within which all fragments of an Internet Protocol (IP) packet must arrive.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketsFragmented">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets fragmented.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.PacketsReassembled">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets reassembled.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPackets">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsDelivered">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets delivered.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsDiscarded">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets that have been received and discarded.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsForwarded">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets forwarded.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsWithAddressErrors">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets with address errors that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsWithHeadersErrors">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets with header errors that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsWithUnknownProtocol">
+            <summary>
+            Gets the number of Internet Protocol (IP) packets received on the local machine with an unknown protocol in the header.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.NetBiosNodeType">
+            <summary>
+            Specifies the Network Basic Input/Output System (NetBIOS) node type. 
+            </summary>
+            <remarks>The node type determines the way in which NetBIOS names are resolved to Internet Protocol (IP) addresses. 
+            The following table shows the name resolution method for each node type.
+            <list type="table">
+            <term>Node type</term><description>Resolve name to IP address </description>
+            <term>Broadcast</term><description>Uses NetBIOS name queries.</description>
+            <term>Peer2Peer</term><description>Uses a NetBIOS name server (NBNS), for example, Windows Internet Name Service (WINS).</description>
+            <term>Mixed</term><description>Attempts to resolve by first using NetBIOS name queries and then using an NBNS.</description>
+            <term>Hybrid</term><description>Attempts to resolve by first using an NBNS and then using a NetBIOS name query.</description>
+            </list>  
+            This enumeration is used to specify values for the <see cref="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.NodeType"/> property.</remarks>
+            <seealso cref="!:System.Net.NetworkInformation.NetBiosNodeType"/>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetBiosNodeType.Unknown">
+            <summary>
+            An unknown node type.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetBiosNodeType.Broadcast">
+            <summary>
+            A broadcast node.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetBiosNodeType.Peer2Peer">
+            <summary>
+            A peer-to-peer node.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetBiosNodeType.Mixed">
+            <summary>
+            A mixed node.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.NetworkInformation.NetBiosNodeType.Hybrid">
+            <summary>
+            A hybrid node.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.FtpWebResponse">
+            <summary>
+            Encapsulates a File Transfer Protocol (FTP) server's response to a request.
+            </summary>
+            <remarks>Instances of <see cref="T:InTheHand.Net.FtpWebResponse"/> are obtained by calling the <see cref="M:InTheHand.Net.FtpWebRequest.GetResponse"/> method.
+            The returned object must be cast to an <see cref="T:InTheHand.Net.FtpWebResponse"/>. 
+            When your application no longer needs the <see cref="T:InTheHand.Net.FtpWebResponse"/> object, call the <see cref="M:InTheHand.Net.FtpWebResponse.Close"/> method to free the resources held by the <see cref="T:InTheHand.Net.FtpWebResponse"/>.
+            <para>The <see cref="P:InTheHand.Net.FtpWebResponse.StatusCode"/> property contains the status code returned by the server, and the <see cref="P:InTheHand.Net.FtpWebResponse.StatusDescription"/> property returns the status code and a message that describes the status. 
+            The values returned by these properties change as the messages are returned by the server.</para>
+            <para>Any data returned by the request, such as the list of file names returned for a <see cref="F:InTheHand.Net.WebRequestMethods.Ftp.ListDirectory"/> request, is available in the stream returned by the <see cref="M:InTheHand.Net.FtpWebResponse.GetResponseStream"/> method.
+            The length of the stream data can be obtained from the <see cref="P:InTheHand.Net.FtpWebResponse.ContentLength"/> property.</para></remarks>
+            <seealso cref="!:System.Net.FtpWebResponse"/>
+        </member>
+        <member name="M:InTheHand.Net.FtpWebResponse.GetResponseStream">
+            <summary>
+            Retrieves the stream that contains response data sent from an FTP server.
+            </summary>
+            <returns>A readable <see cref="T:System.IO.Stream"/> instance that contains data returned with the response; otherwise, Null if no response data was returned by the server.</returns>
+        </member>
+        <member name="M:InTheHand.Net.FtpWebResponse.Close">
+            <summary>
+            Frees the resources held by the response.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebResponse.StatusCode">
+            <summary>
+            Gets the most recent status code sent from the FTP server.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebResponse.StatusDescription">
+            <summary>
+            Gets text that describes a status code sent from the FTP server.
+            </summary>
+            <value>A <see cref="T:System.String"/> instance that contains the status code and message returned with this response.</value>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebResponse.ContentLength">
+            <summary>
+            Gets the length of the data received from the FTP server.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebResponse.LastModified">
+            <summary>
+            Gets the date and time that a file on an FTP server was last modified.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebResponse.ResponseUri">
+            <summary>
+            Gets the URI that sent the response to the request.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Windows.Forms.AuthenticationDialog">
+            <summary>
+            The AuthenticationDialog class launches the Authentication dialog which prompts the user for a username/password.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Windows.Forms.AuthenticationDialog.#ctor">
+            <summary>
+            Initializes a new instance of the AuthenticationDialog class.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Windows.Forms.AuthenticationDialog.ShowDialog">
+            <summary>
+            Displays the authentication dialog box.
+            </summary>
+            <returns>One of the <see cref="T:System.Windows.Forms.DialogResult"/> values (either OK or Cancel). </returns>
+        </member>
+        <member name="P:InTheHand.Windows.Forms.AuthenticationDialog.Username">
+            <summary>
+            Specifies the user name.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Windows.Forms.AuthenticationDialog.Password">
+            <summary>
+            Specifies the password associated with the user name.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Windows.Forms.AuthenticationDialog.Domain">
+            <summary>
+            Specifies the domain where the user name is located.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Windows.Forms.AuthenticationDialog.ResourceName">
+            <summary>
+            Specifies the name of the resource to which the user is being logged on.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Windows.Forms.AuthenticationDialog.SavePassword">
+            <summary>
+            Get or set a value which specifies whether the Save Password box is selected.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Windows.Forms.AuthenticationDialog.ShowSavePassword">
+            <summary>
+            Gets or sets a value which specifies whether to show the Save Password control.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Windows.Forms.AuthenticationDialog.Owner">
+            <summary>
+            Gets or sets the owner control.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.TcpStatistics">
+            <summary>
+            Provides Internet Protocol (IP) statistical data.
+            </summary>
+            <remarks>Instances of this class are returned by the <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetTcpIPv4Statistics"/> and <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetTcpIPv6Statistics"/> methods, to give applications access to TCP traffic information.
+            The information in this class correlates to the management information objects described in <a href="http://www.ietf.org/rfc/rfc2012.txt"/>.</remarks>
+            <seealso cref="!:System.Net.NetworkInformation.TcpStatistics"/>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.ConnectionsAccepted">
+            <summary>
+            Gets the number of accepted Transmission Control Protocol (TCP) connection requests.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP connection requests accepted.</value>
+            <remarks>IETF RFC 2012 formally defines this value as, "The number of times TCP connections have made a direct transition to the SYN-RCVD state from the LISTEN state."</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.ConnectionsInitiated">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) connection requests made by clients.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP connections initiated by clients.</value>
+            <remarks>IETF RFC 2012 formally defines this value as, "The number of times TCP connections have made a direct transition to the SYN-SENT state from the CLOSED state."</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.CumulativeConnections">
+            <summary>
+            Specifies the total number of Transmission Control Protocol (TCP) connections established.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of connections established.</value>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.CurrentConnections">
+            <summary>
+            Gets the number of current Transmission Control Protocol (TCP) connections.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of current TCP connections.</value>
+            <remarks>IETF RFC 2012 formally defines this value as, "The number of TCP connections for which the current state is either ESTABLISHED or CLOSE-WAIT."</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.ErrorsReceived">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) errors received.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP errors received.</value>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.FailedConnectionAttempts">
+            <summary>
+            Gets the number of failed Transmission Control Protocol (TCP) connection attempts.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of failed TCP connection attempts.</value>
+            <remarks>IETF RFC 2012 formally defines this value as, "The number of times TCP connections have made a direct transition to the CLOSED state from either the SYN-SENT state or the SYN-RCVD state, plus the number of times TCP connections have made a direct transition to the LISTEN state from the SYN-RCVD state."</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.MaximumConnections">
+            <summary>
+            Gets the maximum number of supported Transmission Control Protocol (TCP) connections.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP connections that can be supported.</value>
+            <remarks>If the maximum number of connections is dynamic, this property returns -1.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.MaximumTransmissionTimeout">
+            <summary>
+            Gets the maximum retransmission time-out value for Transmission Control Protocol (TCP) segments.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the maximum number of milliseconds permitted by a TCP implementation for the retransmission time-out value.</value>
+            <remarks>TCP starts a retransmission timer when each outbound segment is passed to the network layer (IP).
+            If no acknowledgement is received for the data in the segment before the timer expires, the segment is retransmitted.
+            The timer can be set to any value between the <see cref="!:MinimumTransmissionTimeOut"/> value and the <see cref="!:MaximumTransmissionTimeOut"/> value.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.MinimumTransmissionTimeout">
+            <summary>
+            Gets the minimum retransmission time-out value for Transmission Control Protocol (TCP) segments.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the minimum number of milliseconds permitted by a TCP implementation for the retransmission time-out value.</value>
+            <remarks>TCP starts a retransmission timer when each outbound segment is passed to the network layer (IP). 
+            If no acknowledgement is received for the data in the segment before the timer expires, the segment is retransmitted. 
+            The timer can be set to any value between the <see cref="!:MinimumTransmissionTimeOut"/> value and the <see cref="!:MaximumTransmissionTimeOut"/> value.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.ResetConnections">
+            <summary>
+            Gets the number of RST packets received by Transmission Control Protocol (TCP) connections.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of reset TCP connections.</value>
+            <remarks>IETF RFC 2012 formally defines this value as, "The number of times TCP connections have made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE-WAIT state."</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.ResetsSent">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) segments sent with the reset flag set.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP segments sent with the reset flag set.</value>
+            <remarks>TCP resets are specified using the reset (RST) control bit in the TCP header.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.SegmentsReceived">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) segments received.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP segments received.</value>
+            <remarks>This data includes segments with errors and segments received on currently established connections.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.SegmentsResent">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) segments re-sent.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP segments retransmitted.</value>
+            <remarks>TCP segments that are not acknowledged as being received at the destination are retransmitted.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.TcpStatistics.SegmentsSent">
+            <summary>
+            Gets the number of Transmission Control Protocol (TCP) segments sent.
+            </summary>
+            <value>An <see cref="T:System.Int64"/> value that specifies the total number of TCP segments sent.</value>
+            <remarks>This data includes segments sent for currently established connections but does not include segments containing only retransmitted octets.</remarks>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IcmpV4Statistics">
+            <summary>
+            Provides Internet Control Message Protocol for IPv4 (ICMPv4) statistical data for the local computer.
+            </summary>
+            <remarks>
+            ICMPv4 is a set of error and informational messages for use with Internet Protocol version 4. 
+            ICMP version 4 is defined in IETF RFC 792.
+            This class is used by the <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIcmpV4Statistics"/> method to return ICMPv4 traffic information
+            </remarks>
+            <example>
+            The following example displays the current ICMPv4 statistics.
+            <code>
+            public static void ShowIcmpV4Statistics()
+            {
+                IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+                IcmpV4Statistics stat = properties.GetIcmpV4Statistics();
+                Console.WriteLine("ICMP V4 Statistics:");
+            
+                Console.WriteLine("  Messages ............................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.MessagesSent, stat.MessagesReceived);
+                Console.WriteLine("  Errors .............................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.ErrorsSent, stat.ErrorsReceived);
+            
+                Console.WriteLine("  Echo Requests ....................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.EchoRequestsSent, stat.EchoRequestsReceived);
+                Console.WriteLine("  Echo Replies ........................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.EchoRepliesSent, stat.EchoRepliesReceived);
+            
+                Console.WriteLine("  Destination Unreachables ............ Sent: {0,-10}   Received: {1,-10}",
+                    stat.DestinationUnreachableMessagesSent, stat.DestinationUnreachableMessagesReceived);
+            
+                Console.WriteLine("  Source Quenches ..................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.SourceQuenchesSent, stat.SourceQuenchesReceived);
+            
+                Console.WriteLine("  Redirects ........................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.RedirectsSent, stat.RedirectsReceived);  
+            
+                Console.WriteLine("  TimeExceeded ........................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.TimeExceededMessagesSent, stat.TimeExceededMessagesReceived);
+            
+                Console.WriteLine("  Parameter Problems .................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.ParameterProblemsSent, stat.ParameterProblemsReceived);   
+            
+                Console.WriteLine("  Timestamp Requests .................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.TimestampRequestsSent, stat.TimestampRequestsReceived);    
+                Console.WriteLine("  Timestamp Replies ................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.TimestampRepliesSent, stat.TimestampRepliesReceived);    
+                
+                Console.WriteLine("  Address Mask Requests ............... Sent: {0,-10}   Received: {1,-10}",
+                    stat.AddressMaskRequestsSent, stat.AddressMaskRequestsReceived);    
+                Console.WriteLine("  Address Mask Replies ................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.AddressMaskRepliesSent, stat.AddressMaskRepliesReceived);                    
+                Console.WriteLine("");    
+            }</code></example>
+            <seealso cref="!:System.Net.NetworkInformation.IcmpV4Statistics"/>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.AddressMaskRepliesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Address Mask Reply messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.AddressMaskRepliesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Address Mask Reply messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.AddressMaskRequestsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Address Mask Request messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.AddressMaskRequestsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Address Mask Request messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.DestinationUnreachableMessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) messages that were received because of a packet having an unreachable address in its destination.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.DestinationUnreachableMessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) messages that were sent because of a packet having an unreachable address in its destination.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.EchoRepliesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Echo Reply messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.EchoRepliesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Echo Reply messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.EchoRequestsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Echo Request messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.EchoRequestsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Echo Request messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.ErrorsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) error messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.ErrorsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) error messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.MessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.MessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.ParameterProblemsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Parameter Problem messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.ParameterProblemsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Parameter Problem messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.RedirectsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Redirect messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.RedirectsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Redirect messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.SourceQuenchesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Source Quench messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.SourceQuenchesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Source Quench messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimeExceededMessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Time Exceeded messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimeExceededMessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Time Exceeded messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimestampRepliesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Timestamp Reply messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimestampRepliesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Timestamp Reply messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimestampRequestsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Timestamp Request messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV4Statistics.TimestampRequestsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 4 (ICMPv4) Timestamp Request messages that were sent.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IcmpV6Statistics">
+            <summary>
+            Provides Internet Control Message Protocol for Internet Protocol version 6 (ICMPv6) statistical data for the local computer.
+            </summary>
+            <remarks>ICMPV6 is a set of error and informational messages for use with Internet Protocol version 6 (IPv6). 
+            This class is used by the <see cref="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIcmpV6Statistics"/> method to return ICMPV6 traffic information.
+            <para>ICMPv6 is defined in RFC 2463.</para></remarks>
+            <example>The following example displays the current ICMPv6 statistics.
+            <code>
+            public static void ShowIcmpV6Statistics()
+            {
+                IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+                IcmpV6Statistics stat = properties.GetIcmpV6Statistics();
+                Console.WriteLine("ICMP V6 Statistics:");
+                Console.WriteLine("  Messages ............................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.MessagesSent, stat.MessagesReceived);
+                Console.WriteLine("  Errors .............................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.ErrorsSent, stat.ErrorsReceived);
+            
+                Console.WriteLine("  Echo Requests ....................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.EchoRequestsSent, stat.EchoRequestsReceived);
+                Console.WriteLine("  Echo Replies ........................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.EchoRepliesSent, stat.EchoRepliesReceived);
+            
+                Console.WriteLine("  Destination Unreachables ............ Sent: {0,-10}   Received: {1,-10}",
+                    stat.DestinationUnreachableMessagesSent, stat.DestinationUnreachableMessagesReceived);
+            
+                Console.WriteLine("  Parameter Problems .................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.ParameterProblemsSent, stat.ParameterProblemsReceived);       
+            
+                Console.WriteLine("  Packets Too Big ..................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.PacketTooBigMessagesSent, stat.PacketTooBigMessagesReceived);
+            
+                Console.WriteLine("  Redirects ........................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.RedirectsSent, stat.RedirectsReceived);
+            
+                Console.WriteLine("  Router Advertisements ............... Sent: {0,-10}   Received: {1,-10}",
+                    stat.RouterAdvertisementsSent, stat.RouterAdvertisementsReceived);                    
+                Console.WriteLine("  Router Solicitations ................ Sent: {0,-10}   Received: {1,-10}",
+                    stat.RouterSolicitsSent, stat.RouterSolicitsReceived);   
+            
+                Console.WriteLine("  Time Exceeded ....................... Sent: {0,-10}   Received: {1,-10}",
+                    stat.TimeExceededMessagesSent, stat.TimeExceededMessagesReceived);
+            
+                Console.WriteLine("  Neighbor Advertisements ............. Sent: {0,-10}   Received: {1,-10}",
+                    stat.NeighborAdvertisementsSent, stat.NeighborAdvertisementsReceived);        
+                Console.WriteLine("  Neighbor Solicitations .............. Sent: {0,-10}   Received: {1,-10}",
+                    stat.NeighborSolicitsSent, stat.NeighborSolicitsReceived);    
+            
+                Console.WriteLine("  Membership Queries .................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.MembershipQueriesSent, stat.MembershipQueriesReceived);    
+                Console.WriteLine("  Membership Reports .................. Sent: {0,-10}   Received: {1,-10}",
+                    stat.MembershipReportsSent, stat.MembershipReportsReceived);    
+                Console.WriteLine("  Membership Reductions ............... Sent: {0,-10}   Received: {1,-10}",
+                    stat.MembershipReductionsSent, stat.MembershipReductionsReceived);    
+            
+                Console.WriteLine("");
+            }</code></example>
+            <seealso cref="!:System.Net.NetworkInformation.IcmpV6Statistics"/>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.DestinationUnreachableMessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) messages that were received because of a packet having an unreachable address in its destination.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.DestinationUnreachableMessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) messages that were sent because of a packet having an unreachable address in its destination.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.EchoRepliesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Echo Reply messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.EchoRepliesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Echo Reply messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.EchoRequestsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Echo Request messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.EchoRequestsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Echo Request messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.ErrorsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) error messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.ErrorsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) error messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.MessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.MessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.ParameterProblemsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Parameter Problem messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.ParameterProblemsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Parameter Problem messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.RedirectsReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Redirect messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.RedirectsSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Redirect messages that were sent.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.TimeExceededMessagesReceived">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Time Exceeded messages that were received.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IcmpV6Statistics.TimeExceededMessagesSent">
+            <summary>
+            Gets the number of Internet Control Message Protocol version 6 (ICMPv6) Time Exceeded messages that were sent.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.IPGlobalProperties">
+            <summary>
+            Provides information about the network connectivity of the local computer.
+            </summary>
+            <remarks>This class provides configuration and statistical information about the local computer's network interfaces and network connections.
+            <para>The information provided by this class is similar to that provided by the Internet Protocol Helper API functions. 
+            For information about the Internet Protocol Helper, see the documentation in the MSDN Library.</para></remarks>
+            <example>
+            The following code example displays information about the local computer using an instance of this class.
+            <code>[Visual Basic]
+            Public Shared Sub ShowInboundIPStatistics() 
+                Dim properties As IPGlobalProperties = IPGlobalProperties.GetIPGlobalProperties()
+                Dim ipstat As IPGlobalStatistics = properties.GetIPv4GlobalStatistics()
+                Console.WriteLine("  Inbound Packet Data:")
+                Console.WriteLine("      Received ............................ : {0}", ipstat.ReceivedPackets)
+                Console.WriteLine("      Forwarded ........................... : {0}", ipstat.ReceivedPacketsForwarded)
+                Console.WriteLine("      Delivered ........................... : {0}", ipstat.ReceivedPacketsDelivered)
+                Console.WriteLine("      Discarded ........................... : {0}", ipstat.ReceivedPacketsDiscarded)
+            End Sub 'ShowInboundIPStatistics
+            </code>
+            <code>
+            public static void ShowInboundIPStatistics()
+            {
+                IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+                IPGlobalStatistics ipstat = properties.GetIPv4GlobalStatistics();
+                Console.WriteLine("  Inbound Packet Data:");
+                Console.WriteLine("      Received ............................ : {0}", 
+                ipstat.ReceivedPackets);
+                Console.WriteLine("      Forwarded ........................... : {0}", 
+                ipstat.ReceivedPacketsForwarded);
+                Console.WriteLine("      Delivered ........................... : {0}", 
+                ipstat.ReceivedPacketsDelivered);
+                Console.WriteLine("      Discarded ........................... : {0}", 
+                ipstat.ReceivedPacketsDiscarded);   
+            }
+            </code>
+            </example>
+            <seealso cref="!:System.Net.NetworkInformation.IPGlobalProperties"/>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties">
+            <summary>
+            Gets an object that provides information about the local computer's network connectivity and traffic statistics. 
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.IPGlobalProperties"/> object that contains information about the local computer.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIcmpV4Statistics">
+            <summary>
+            Provides Internet Control Message Protocol (ICMP) version 4 statistical data for the local computer.
+            </summary>
+            <returns>An <see cref="T:InTheHand.Net.NetworkInformation.IcmpV4Statistics"/> object that provides ICMP version 4 traffic statistics for the local computer.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIcmpV6Statistics">
+            <summary>
+            Provides Internet Control Message Protocol (ICMP) version 6 statistical data for the local computer.
+            </summary>
+            <returns>An <see cref="T:InTheHand.Net.NetworkInformation.IcmpV6Statistics"/> object that provides ICMP version 6 traffic statistics for the local computer.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIPv4GlobalStatistics">
+            <summary>
+            Provides Internet Protocol version 4 (IPv4) statistical data for the local computer. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetIPv6GlobalStatistics">
+            <summary>
+            Provides Internet Protocol version 6 (IPv6) statistical data for the local computer. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetTcpIPv4Statistics">
+            <summary>
+            Provides Transmission Control Protocol/Internet Protocol version 4 (TCP/IPv4) statistical data for the local computer. 
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.TcpStatistics"/> object that provides TCP/IPv4 traffic statistics for the local computer. </returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetTcpIPv6Statistics">
+            <summary>
+            Provides Transmission Control Protocol/Internet Protocol version 6 (TCP/IPv6) statistical data for the local computer. 
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.TcpStatistics"/> object that provides TCP/IPv6 traffic statistics for the local computer. </returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetUdpIPv4Statistics">
+            <summary>
+            Provides User Datagram Protocol/Internet Protocol version 4 (UDP/IPv4) statistical data for the local computer. 
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.UdpStatistics"/> object that provides UDP/IPv4 traffic statistics for the local computer.</returns>
+        </member>
+        <member name="M:InTheHand.Net.NetworkInformation.IPGlobalProperties.GetUdpIPv6Statistics">
+            <summary>
+            Provides User Datagram Protocol/Internet Protocol version 6 (UDP/IPv6) statistical data for the local computer. 
+            </summary>
+            <returns>A <see cref="T:InTheHand.Net.NetworkInformation.UdpStatistics"/> object that provides UDP/IPv6 traffic statistics for the local computer.</returns>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.HostName">
+            <summary>
+            Gets the host name for the local computer.
+            </summary>
+            <value>A <see cref="T:System.String"/> instance that contains the computer's NetBIOS name.</value>
+            <exception cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException">A Win32 function call failed.</exception>
+            <remarks>A computer's NetBIOS name must be unique within a network and is not fully qualified by the domain name.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.DomainName">
+            <summary>
+            Gets the domain in which the local computer is registered.
+            </summary>
+            <value>A <see cref="T:System.String"/> instance that contains the computer's domain name.
+            If the computer does not belong to a domain, returns <see cref="F:System.String.Empty"/>.</value>
+            <exception cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException">A Win32 function call failed.</exception>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.DhcpScopeName">
+            <summary>
+            Gets the Dynamic Host Configuration Protocol (DHCP) scope name.
+            </summary>
+            <value>A <see cref="T:System.String"/> instance that contains the computer's DHCP scope name.</value>
+            <exception cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException">A Win32 function call failed.</exception>
+            <remarks>A DHCP scope is an administrative grouping of networked computers that are on the same subnet.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.IsWinsProxy">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value that specifies whether the local computer is acting as a Windows Internet Name Service (WINS) proxy.
+            </summary>
+            <value>true if the local computer is a WINS proxy; otherwise, false.</value>
+            <exception cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException">A Win32 function call failed.</exception>
+            <remarks>WINS provides a distributed database for registering and querying dynamic NetBIOS names to IP address mappings.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.IPGlobalProperties.NodeType">
+            <summary>
+            Gets the Network Basic Input/Output System (NetBIOS) node type of the local computer.
+            </summary>
+            <value>A <see cref="T:InTheHand.Net.NetworkInformation.NetBiosNodeType"/> value.</value>
+            <exception cref="T:InTheHand.Net.NetworkInformation.NetworkInformationException">A Win32 function call failed.</exception>
+            <remarks>The node type determines the way in which NetBIOS names are resolved to IP addresses. 
+            For additional information, see the <see cref="T:InTheHand.Net.NetworkInformation.NetBiosNodeType"/> class overview.</remarks>
+        </member>
+        <member name="T:InTheHand.Web.HttpUtility">
+            <summary>
+            Provides methods for encoding and decoding URLs.
+            </summary>
+            <seealso cref="!:System.Web.HttpUtility"/>
+        </member>
+        <member name="M:InTheHand.Web.HttpUtility.UrlEncode(System.String)">
+            <summary>
+            Encodes a URL string.
+            </summary>
+            <param name="str">The text to encode.</param>
+            <returns>An encoded string.</returns>
+        </member>
+        <member name="M:InTheHand.Web.HttpUtility.UrlEncode(System.String,System.Text.Encoding)">
+            <summary>
+            Encodes a URL string using the specified encoding object.
+            </summary>
+            <param name="str">The text to encode.</param>
+            <param name="e">The <see cref="T:System.Text.Encoding"/> object that specifies the encoding scheme.</param>
+            <returns>An encoded string.</returns>
+        </member>
+        <member name="M:InTheHand.Web.HttpUtility.UrlDecode(System.String)">
+            <summary>
+            Converts a URL-encoded string into a decoded string.
+            </summary>
+            <param name="str">The string to decode.</param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Web.HttpUtility.UrlDecode(System.String,System.Text.Encoding)">
+            <summary>
+            Converts a URL-encoded string into a decoded string, using the specified encoding object.
+            </summary>
+            <param name="str">The string to decode.</param>
+            <param name="e">The <see cref="T:System.Text.Encoding"/> that specifies the decoding scheme.</param>
+            <returns></returns>
+        </member>
+        <member name="M:InTheHand.Web.HttpUtility.UrlEncodeToBytes(System.Byte[])">
+            <summary>
+            Converts an array of bytes into a URL-encoded array of bytes. 
+            </summary>
+            <param name="bytes">The array of bytes to encode.</param>
+            <returns>An encoded array of bytes.</returns>
+        </member>
+        <member name="M:InTheHand.Web.HttpUtility.UrlEncodeToBytes(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Converts an array of bytes into a URL-encoded array of bytes, starting at the specified position in the array and continuing for the specified number of bytes.
+            </summary>
+            <param name="bytes">The array of bytes to encode.</param>
+            <param name="offset">The position in the byte array at which to begin encoding.</param>
+            <param name="count">The number of bytes to encode.</param>
+            <returns>An encoded array of bytes.</returns>
+        </member>
+        <member name="M:InTheHand.Web.HttpUtility.UrlEncodeToBytes(System.String)">
+            <summary>
+            Converts a string into a URL-encoded array of bytes. 
+            </summary>
+            <param name="str">The string to encode.</param>
+            <returns>An encoded array of bytes.</returns>
+        </member>
+        <member name="M:InTheHand.Web.HttpUtility.UrlEncodeToBytes(System.String,System.Text.Encoding)">
+            <summary>
+            Converts a string into a URL-encoded array of bytes using the specified encoding object. 
+            </summary>
+            <param name="str">The string to encode.</param>
+            <param name="e">The <see cref="T:System.Text.Encoding"/> that specifies the encoding scheme. </param>
+            <returns>An encoded array of bytes.</returns>
+        </member>
+        <member name="T:InTheHand.Net.NetworkInformation.NetworkInformationException">
+            <summary>
+            The exception that is thrown when an error occurs while retrieving network information.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.NetworkInformation.NetworkInformationException.ErrorCode">
+            <summary>
+            Gets the Win32 error code for this exception.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.WebRequestMethods">
+            <summary>
+            Container class for <see cref="T:InTheHand.Net.WebRequestMethods.Ftp"/> and <see cref="T:InTheHand.Net.WebRequestMethods.Http"/> classes.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.WebRequestMethods.Ftp">
+            <summary>
+            Represents the types of FTP protocol methods that can be used with an FTP request.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.AppendFile">
+            <summary>
+            Represents the FTP APPE protocol method that is used to append a file to an existing file on an FTP server. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.DeleteFile">
+            <summary>
+            Represents the FTP DELE protocol method that is used to delete a file on an FTP server. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.DownloadFile">
+            <summary>
+            Represents the FTP RETR protocol method that is used to download a file from an FTP server. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.GetDateTimestamp">
+            <summary>
+            Represents the FTP MDTM protocol method that is used to download a timestamp for a file from an FTP server.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.GetFileSize">
+            <summary>
+            Represents the FTP SIZE protocol method that is used to retrieve the size of a file on an FTP server. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.ListDirectory">
+            <summary>
+            Represents the FTP NLIST protocol method that gets a short listing of the files on an FTP server. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.ListDirectoryDetails">
+            <summary>
+            Represents the FTP LIST protocol method that gets a detailed listing of the files on an FTP server. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.MakeDirectory">
+            <summary>
+            Represents the FTP MKD protocol method creates a directory on an FTP server. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.PrintWorkingDirectory">
+            <summary>
+            Represents the FTP PWD protocol method that prints the name of the current working directory. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.RemoveDirectory">
+            <summary>
+            Represents the FTP RMD protocol method that removes a directory. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.Rename">
+            <summary>
+            Represents the FTP RENAME protocol method that renames a directory. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.UploadFile">
+            <summary>
+            Represents the FTP STOR protocol method that uploads a file to an FTP server. 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Ftp.UploadFileWithUniqueName">
+            <summary>
+            Represents the FTP STOU protocol that uploads a file with a unique name to an FTP server. 
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.WebRequestMethods.Http">
+            <summary>
+            Represents the types of HTTP protocol methods that can be used with an HTTP request.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Http.Connect">
+            <summary>
+            Represents the HTTP CONNECT protocol method that is used with a proxy that can dynamically switch to tunneling, as in the case of SSL tunneling.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Http.Get">
+            <summary>
+            Represents an HTTP GET protocol method.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Http.Head">
+            <summary>
+            Represents an HTTP HEAD protocol method.
+            The HEAD method is identical to GET except that the server only returns message-headers in the response, without a message-body.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Http.MkCol">
+            <summary>
+            Represents an HTTP MKCOL request that creates a new collection (such as a collection of pages) at the location specified by the request-Uniform Resource Identifier (URI). 
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Http.Post">
+            <summary>
+            Represents an HTTP POST protocol method that is used to post a new entity as an addition to a URI.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.WebRequestMethods.Http.Put">
+            <summary>
+            Represents an HTTP PUT protocol method that is used to replace an entity identified by a URI.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.WebClient">
+            <summary>
+            Provides helper methods for sending data to and receiving data from a resource identified by a URI.
+            </summary>
+            <seealso cref="!:System.Net.WebClient"/>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.GetWebRequest(System.Uri)">
+            <summary>
+            Returns a <see cref="T:System.Net.WebRequest"/> object for the specified resource.
+            </summary>
+            <param name="address">A <see cref="T:System.Uri"/> that identifies the resource to request.</param>
+            <returns>A new WebRequest object for the specified resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.GetWebResponse(System.Net.WebRequest)">
+            <summary>
+            Returns the <see cref="T:System.Net.WebResponse"/> for the specified <see cref="T:System.Net.WebRequest"/>. 
+            </summary>
+            <param name="request">A <see cref="T:System.Net.WebRequest"/> that is used to obtain the response.</param>
+            <returns>A <see cref="T:System.Net.WebResponse"/> for the specified <see cref="T:System.Net.WebRequest"/>.</returns>
+            <remarks>The object returned by this method is obtained by calling the <see cref="M:System.Net.WebRequest.GetResponse"/> method on the specified <see cref="T:System.Net.WebRequest"/> object. 
+            This method can be called only by classes that inherit from <see cref="T:InTheHand.Net.WebClient"/>.
+            It is provided to give inheritors access to the underlying <see cref="T:System.Net.WebResponse"/> object.
+            </remarks>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.DownloadData(System.String)">
+            <summary>
+            Downloads data at the specified URI as a <see cref="T:System.Byte"/> array.
+            </summary>
+            <param name="address">The URI from which to download data.</param>
+            <returns>A Byte array containing the downloaded resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.DownloadData(System.Uri)">
+            <summary>
+            Downloads data at the specified URI as a <see cref="T:System.Byte"/> array.
+            </summary>
+            <param name="address">The URI from which to download data.</param>
+            <returns>A Byte array containing the downloaded resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.DownloadFile(System.String,System.String)">
+            <summary>
+            Downloads the resource with the specified URI to a local file.
+            </summary>
+            <param name="address">The URI from which to download data.</param>
+            <param name="fileName">The name of the local file that is to receive the data.</param>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.DownloadFile(System.Uri,System.String)">
+            <summary>
+            Downloads the resource with the specified URI to a local file.
+            </summary>
+            <param name="address">The URI specified as a String, from which to download data.</param>
+            <param name="fileName">The name of the local file that is to receive the data.</param>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.DownloadString(System.String)">
+            <summary>
+            Downloads the specified resource as a <see cref="T:System.String"/>.
+            </summary>
+            <param name="address">The URI from which to download data.</param>
+            <returns>A <see cref="T:System.String"/> containing the specified resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.DownloadString(System.Uri)">
+            <summary>
+            Downloads the specified resource as a <see cref="T:System.String"/>.
+            </summary>
+            <param name="address">The URI from which to download data.</param>
+            <returns>A <see cref="T:System.String"/> containing the specified resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadData(System.String,System.Byte[])">
+            <summary>
+            Uploads a data buffer to a resource identified by a URI.
+            </summary>
+            <param name="address">The URI of the resource to receive the data.</param>
+            <param name="data">The data buffer to send to the resource.</param>
+            <returns>A <see cref="T:System.Byte"/> array containing the body of the response from the resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadData(System.Uri,System.Byte[])">
+            <summary>
+            Uploads a data buffer to a resource identified by a URI.
+            </summary>
+            <param name="address">The URI of the resource to receive the data.</param>
+            <param name="data">The data buffer to send to the resource.</param>
+            <returns>A <see cref="T:System.Byte"/> array containing the body of the response from the resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadData(System.String,System.String,System.Byte[])">
+            <summary>
+            Uploads a data buffer to the specified resource, using the specified method.
+            </summary>
+            <param name="address">The URI of the resource to receive the data.</param>
+            <param name="method">The HTTP method used to send the data to the resource.
+            If null, the default is POST for http and STOR for ftp.</param>
+            <param name="data">The data buffer to send to the resource.</param>
+            <returns>A <see cref="T:System.Byte"/> array containing the body of the response from the resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadData(System.Uri,System.String,System.Byte[])">
+            <summary>
+            Uploads a data buffer to the specified resource, using the specified method.
+            </summary>
+            <param name="address">The URI of the resource to receive the data.</param>
+            <param name="method">The HTTP method used to send the data to the resource.
+            If null, the default is POST for http and STOR for ftp.</param>
+            <param name="data">The data buffer to send to the resource.</param>
+            <returns>A <see cref="T:System.Byte"/> array containing the body of the response from the resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadFile(System.String,System.String)">
+            <summary>
+            Uploads the specified local file to a resource with the specified URI.
+            </summary>
+            <param name="address">The URI of the resource to receive the data.</param>
+            <param name="fileName">The file to send to the resource.</param>
+            <returns>A <see cref="T:System.Byte"/> array containing the body of the response from the resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadFile(System.Uri,System.String)">
+            <summary>
+            Uploads the specified local file to a resource with the specified URI.
+            </summary>
+            <param name="address">The URI of the resource to receive the data.</param>
+            <param name="fileName">The file to send to the resource.</param>
+            <returns>A <see cref="T:System.Byte"/> array containing the body of the response from the resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadFile(System.String,System.String,System.String)">
+            <summary>
+            Uploads the specified local file to the specified resource, using the specified method.
+            </summary>
+            <param name="address">The URI of the resource to receive the data.</param>
+            <param name="method">The HTTP method used to send the data to the resource.
+            If null, the default is POST for http and STOR for ftp.</param>
+            <param name="fileName">The file to send to the resource.</param>
+            <returns>A <see cref="T:System.Byte"/> array containing the body of the response from the resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadFile(System.Uri,System.String,System.String)">
+            <summary>
+            Uploads the specified local file to the specified resource, using the specified method.
+            </summary>
+            <param name="address">The URI of the resource to receive the data.</param>
+            <param name="method">The HTTP method used to send the data to the resource.
+            If null, the default is POST for http and STOR for ftp.</param>
+            <param name="fileName">The file to send to the resource.</param>
+            <returns>A <see cref="T:System.Byte"/> array containing the body of the response from the resource.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadString(System.String,System.String)">
+            <summary>
+            Uploads the specified string to the specified resource.
+            </summary>
+            <param name="address">The URI of the resource to receive the string.
+            For Http resources, this URI must identify a resource that can accept a request sent with the POST method, such as a script or ASP page.</param>
+            <param name="data">The string to be uploaded.</param>
+            <returns>A <see cref="T:System.String"/> containing the response sent by the server.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadString(System.Uri,System.String)">
+            <summary>
+            Uploads the specified string to the specified resource.
+            </summary>
+            <param name="address">The URI of the resource to receive the string.
+            For Http resources, this URI must identify a resource that can accept a request sent with the POST method, such as a script or ASP page.</param>
+            <param name="data">The string to be uploaded.</param>
+            <returns>A <see cref="T:System.String"/> containing the response sent by the server.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadString(System.String,System.String,System.String)">
+            <summary>
+            Uploads the specified string to the specified resource, using the specified method.
+            </summary>
+            <param name="address">The URI of the resource to receive the string.
+            For Http resources, this URI must identify a resource that can accept a request sent with the POST method, such as a script or ASP page.</param>
+            <param name="method">The HTTP method used to send the data to the resource.
+            If null, the default is POST for http and STOR for ftp.</param>
+            <param name="data">The string to be uploaded.</param>
+            <returns>A <see cref="T:System.String"/> containing the response sent by the server.</returns>
+        </member>
+        <member name="M:InTheHand.Net.WebClient.UploadString(System.Uri,System.String,System.String)">
+            <summary>
+            Uploads the specified string to the specified resource, using the specified method.
+            </summary>
+            <param name="address">The URI of the resource to receive the string.
+            For Http resources, this URI must identify a resource that can accept a request sent with the POST method, such as a script or ASP page.</param>
+            <param name="method">The HTTP method used to send the data to the resource.
+            If null, the default is POST for http and STOR for ftp.</param>
+            <param name="data">The string to be uploaded.</param>
+            <returns>A <see cref="T:System.String"/> containing the response sent by the server.</returns>
+        </member>
+        <member name="P:InTheHand.Net.WebClient.BaseAddress">
+            <summary>
+            Gets or sets the base URI for requests made by a <see cref="T:InTheHand.Net.WebClient"/>.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the base URI for requests made by a <see cref="T:InTheHand.Net.WebClient"/> or <see cref="F:System.String.Empty"/> if no base address has been specified.</value>
+        </member>
+        <member name="P:InTheHand.Net.WebClient.Credentials">
+            <summary>
+            Gets or sets the network credentials that are sent to the host and used to authenticate the request.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.WebClient.Encoding">
+            <summary>
+            Gets and sets the <see cref="T:System.Text.Encoding"/> used to upload and download strings. 
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.WebClient.Headers">
+            <summary>
+            Gets or sets a collection of header name/value pairs associated with the request.
+            </summary>
+            <value>A <see cref="T:System.Net.WebHeaderCollection"/> containing header name/value pairs associated with this request.</value>
+            <remarks>The <see cref="P:InTheHand.Net.WebClient.Headers"/> property contains a <see cref="T:System.Net.WebHeaderCollection"/> instance containing header information that the <see cref="T:InTheHand.Net.WebClient"/> sends with the request.
+            This is an unrestricted collection of headers, so setting headers that are restricted by <see cref="T:System.Net.WebRequest"/> descendants such as <see cref="T:System.Net.HttpWebRequest"/> is allowed.</remarks>
+        </member>
+        <member name="T:InTheHand.Net.FtpStatusCode">
+            <summary>
+            Specifies the status codes returned for a File Transfer Protocol (FTP) operation.
+            </summary>
+            <remarks>The <see cref="T:InTheHand.Net.FtpStatusCode"/> enumeration defines the values returned in the <see cref="P:InTheHand.Net.FtpWebResponse.StatusCode"/> property.
+            <para>For additional information about FTP server status codes, see RFC 959, "File Transfer Protocol," Section 4.2, "FTP Replies," available at <a href="http://www.rfc-editor.org">http://www.rfc-editor.org</a>.</para></remarks>
+            <seealso cref="!:System.Net.FtpStatusCode"/>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.AccountNeeded">
+            <summary>
+            Specifies that a user account on the server is required.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ActionAbortedLocalProcessingError">
+            <summary>
+            Specifies that an error occurred that prevented the request action from completing.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ActionAbortedUnknownPageType">
+            <summary>
+            Specifies that the requested action cannot be taken because the specified page type is unknown.
+            Page types are described in RFC 959 Section 3.1.2.3
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ActionNotTakenFilenameNotAllowed">
+            <summary>
+            Specifies that the requested action cannot be performed on the specified file.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ActionNotTakenFileUnavailable">
+            <summary>
+            Specifies that the requested action cannot be performed on the specified file because the file is not available.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ActionNotTakenFileUnavailableOrBusy">
+            <summary>
+            Specifies that the requested action cannot be performed on the specified file because the file is not available or is being used.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ActionNotTakenInsufficientSpace">
+            <summary>
+            Specifies that the requested action cannot be performed because there is not enough space on the server.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ArgumentSyntaxError">
+            <summary>
+            Specifies that one or more command arguments has a syntax error.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.BadCommandSequence">
+            <summary>
+            Specifies that the sequence of commands is not in the correct order.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.CantOpenData">
+            <summary>
+            Specifies that the data connection cannot be opened.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ClosingControl">
+            <summary>
+            Specifies that the server is closing the control connection.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ClosingData">
+            <summary>
+            Specifies that the server is closing the data connection and that the requested file action was successful.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.CommandExtraneous">
+            <summary>
+            Specifies that the command is not implemented by the server because it is not needed.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.CommandNotImplemented">
+            <summary>
+            Specifies that the command is not implemented by the FTP server.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.CommandOK">
+            <summary>
+            Specifies that the command completed successfully.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.CommandSyntaxError">
+            <summary>
+            Specifies that the command has a syntax error or is not a command recognized by the server.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ConnectionClosed">
+            <summary>
+            Specifies that the connection has been closed.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.DataAlreadyOpen">
+            <summary>
+            Specifies that the data connection is already open and the requested transfer is starting.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.DirectoryStatus">
+            <summary>
+            Specifies the status of a directory.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.EnteringPassive">
+            <summary>
+            Specifies that the server is entering passive mode.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.FileActionAborted">
+            <summary>
+            Specifies that the requested action cannot be performed.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.FileActionOK">
+            <summary>
+            Specifies that the requested file action completed successfully.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.FileCommandPending">
+            <summary>
+            Specifies that the requested file action requires additional information.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.FileStatus">
+            <summary>
+            Specifies the status of a file.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.LoggedInProceed">
+            <summary>
+            Specifies that the user is logged in and can send commands.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.NeedLoginAccount">
+            <summary>
+            Specifies that the server requires a login account to be supplied.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.NotLoggedIn">
+            <summary>
+            Specifies that login information must be sent to the server.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.OpeningData">
+            <summary>
+            Specifies that the server is opening the data connection.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.PathnameCreated">
+            <summary>
+            Specifies that the requested path name was created.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.RestartMarker">
+            <summary>
+            Specifies that the response contains a restart marker reply.
+            The text of the description that accompanies this status contains the user data stream marker and the server marker.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.SendPasswordCommand">
+            <summary>
+            Specifies that the server expects a password to be supplied.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.SendUserCommand">
+            <summary>
+            Specifies that the server is ready for a user login operation.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ServerWantsSecureSession">
+            <summary>
+            Specifies that the server accepts the authentication mechanism specified by the client, and the exchange of security data is complete.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ServiceNotAvailable">
+            <summary>
+            Specifies that the service is not available.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.ServiceTemporarilyNotAvailable">
+            <summary>
+            Specifies that the service is not available now; try your request later.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.SystemType">
+            <summary>
+            Specifies the system type name using the system names published in the Assigned Numbers document published by the Internet Assigned Numbers Authority.
+            </summary>
+        </member>
+        <member name="F:InTheHand.Net.FtpStatusCode.Undefined">
+            <summary>
+            Included for completeness, this value is never returned by servers.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Net.FtpWebRequest">
+            <summary>
+            Implements a File Transfer Protocol (FTP) client.
+            </summary>
+            <remarks>
+            <para>You must call the static method <see cref="M:InTheHand.Net.FtpWebRequest.RegisterPrefix"/> before this class can be used with <see cref="M:System.Net.WebRequest.Create(System.String)"/>. You only need to call <see cref="M:InTheHand.Net.FtpWebRequest.RegisterPrefix"/> once in your application.</para>
+            To obtain an instance of <see cref="T:InTheHand.Net.FtpWebRequest"/>, use the <see cref="M:System.Net.WebRequest.Create(System.String)"/> method after calling <see cref="M:InTheHand.Net.FtpWebRequest.RegisterPrefix"/>.
+            You can also use the <see cref="T:InTheHand.Net.WebClient"/> class to upload and download information from an FTP server.
+            Using either of these approaches, when you specify a network resource that uses the FTP scheme (for example, "ftp://contoso.com") the <see cref="T:InTheHand.Net.FtpWebRequest"/> class provides the ability to programmatically interact with FTP servers.
+            The URI may be relative or absolute.
+            If the URI is of the form "ftp://contoso.com/%2fpath" (%2f is an escaped '/'), then the URI is absolute, and the current directory is /path.
+            If, however, the URI is of the form "ftp://contoso.com/path", first the .NET Framework logs into the FTP server (using the user name and password set by the <see cref="P:InTheHand.Net.FtpWebRequest.Credentials"/> property), then the current directory is set to &lt;UserLoginDirectory&gt;/path.
+            You must have a valid user name and password for the server or the server must allow anonymous logon.
+            You can specify the credentials used to connect to the server by setting the <see cref="P:InTheHand.Net.FtpWebRequest.Credentials"/> property or you can include them in the <see cref="P:System.Uri.UserInfo"/> portion of the URI passed to the <see cref="M:System.Net.WebRequest.Create(System.String)"/> method.
+            If you include <see cref="P:System.Uri.UserInfo"/> information in the URI, the <see cref="P:InTheHand.Net.FtpWebRequest.Credentials"/> property is set to a new network credential with the specified user name and password information.
+            </remarks>
+            <example>The following code example demonstrates deleting a file from an FTP server.
+            <code>
+            public static bool DeleteFileOnServer(Uri serverUri)
+            {
+                FtpWebRequest.RegisterPrefix();
+                // The serverUri parameter should use the ftp:// scheme.
+                // It contains the name of the server file that is to be deleted.
+                // Example: ftp://contoso.com/someFile.txt.
+                // 
+                
+                if (serverUri.Scheme != Uri.UriSchemeFtp)
+                {
+                    return false;
+                }
+                // Get the object used to communicate with the server.
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(serverUri);
+                request.Method = WebRequestMethods.Ftp.DeleteFile;
+                
+                FtpWebResponse response = (FtpWebResponse) request.GetResponse();
+                Console.WriteLine("Delete status: {0}",response.StatusDescription);  
+                response.Close();
+                return true;
+            }</code></example>
+            <example>The following code example demonstrates downloading a file from an FTP server by using the <see cref="T:InTheHand.Net.WebClient"/> class.
+            <code>
+            public static bool DisplayFileFromServer(Uri serverUri)
+            {
+                // The serverUri parameter should start with the ftp:// scheme.
+                if (serverUri.Scheme != Uri.UriSchemeFtp)
+                {
+                    return false;
+                }
+                // Get the object used to communicate with the server.
+                WebClient request = new WebClient();
+                // This example assumes the FTP site uses anonymous logon.
+                request.Credentials = new NetworkCredential ("anonymous","janeDoe@contoso.com");
+                try 
+                {
+                    byte [] newFileData = request.DownloadData(serverUri.ToString());
+                    string fileString = System.Text.Encoding.UTF8.GetString(newFileData);
+                    Console.WriteLine(fileString);
+                }
+                catch (WebException e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+                return true;
+            }</code></example>
+            <seealso cref="!:System.Net.FtpWebRequest"/>
+        </member>
+        <member name="M:InTheHand.Net.FtpWebRequest.RegisterPrefix">
+            <summary>
+            Register this class with the <see cref="T:System.Net.WebRequest"/> class.
+            </summary>
+            <remarks>Once this method is called once you can use <see cref="M:System.Net.WebRequest.Create(System.String)"/> to create new <see cref="T:InTheHand.Net.FtpWebRequest"/> instances.</remarks>
+        </member>
+        <member name="M:InTheHand.Net.FtpWebRequest.#ctor(System.Uri)">
+            <summary>
+            Initializes a new <see cref="T:InTheHand.Net.FtpWebRequest"/> instance for the specified URI.
+            </summary>
+            <param name="uri"></param>
+        </member>
+        <member name="M:InTheHand.Net.FtpWebRequest.GetRequestStream">
+            <summary>
+            Retrieves the stream used to upload data to an FTP server.
+            </summary>
+            <returns>A writable <see cref="T:System.IO.Stream"/> instance used to store data to be sent to the server by the current request.</returns>
+            <exception cref="T:System.Net.ProtocolViolationException">The <see cref="P:InTheHand.Net.FtpWebRequest.Method"/> property is not set to <see cref="F:InTheHand.Net.WebRequestMethods.Ftp.UploadFile"/> or <see cref="F:InTheHand.Net.WebRequestMethods.Ftp.AppendFile"/>.</exception>
+        </member>
+        <member name="M:InTheHand.Net.FtpWebRequest.GetResponse">
+            <summary>
+            Returns the FTP server response.
+            </summary>
+            <returns>A <see cref="T:System.Net.WebResponse"/> reference that contains an <see cref="T:InTheHand.Net.FtpWebResponse"/> instance.
+            This object contains the FTP server's response to the request.</returns>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebRequest.ContentLength">
+            <summary>
+            This property supports the .NET Compact Framework infrastructure and is not intended to be used directly from your code. 
+            Gets or sets a value that is ignored by the <see cref="T:InTheHand.Net.FtpWebRequest"/> class.
+            </summary>
+            <remarks>The <see cref="P:InTheHand.Net.FtpWebRequest.ContentLength"/> property is provided only for compatibility with other implementations of the <see cref="T:System.Net.WebRequest"/> and <see cref="T:System.Net.WebResponse"/> classes.
+            There is no reason to use <see cref="P:InTheHand.Net.FtpWebRequest.ContentLength"/>.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebRequest.ContentType">
+            <summary>
+            This property supports the .NET Compact Framework infrastructure and is not intended to be used directly from your code. 
+            Always throws a <see cref="T:System.NotSupportedException"/>. 
+            </summary>
+            <remarks>The <see cref="P:InTheHand.Net.FtpWebRequest.ContentType"/> property is provided only for compatibility with other implementations of the <see cref="T:System.Net.WebRequest"/> and <see cref="T:System.Net.WebResponse"/> classes.
+            There is no reason to use <see cref="P:InTheHand.Net.FtpWebRequest.ContentType"/>.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebRequest.Credentials">
+            <summary>
+            Gets or sets the credentials used to communicate with the FTP server.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebRequest.Headers">
+            <summary>
+            This property supports the .NET Compact Framework infrastructure and is not intended to be used directly from your code.
+            Gets an empty <see cref="T:System.Net.WebHeaderCollection"/> object.
+            </summary>
+            <value>An empty <see cref="T:System.Net.WebHeaderCollection"/> object.</value>
+            <remarks>The <see cref="P:InTheHand.Net.FtpWebRequest.Headers"/> property is provided only for compatibility with other implementations of the <see cref="T:System.Net.WebRequest"/> and <see cref="T:System.Net.WebResponse"/> classes.
+            There is no reason to use <see cref="P:InTheHand.Net.FtpWebRequest.Headers"/>.</remarks>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebRequest.Method">
+            <summary>
+            Gets or sets the command to send to the FTP server. 
+            </summary>
+            <value>A <see cref="T:System.String"/> value that contains the FTP command to send to the server.
+            The default value is <see cref="F:InTheHand.Net.WebRequestMethods.Ftp.DownloadFile"/>.</value>
+            <remarks>The Method property determines which command is sent to the server.
+            You set the Method by using the strings defined in the public field members of the <see cref="T:InTheHand.Net.WebRequestMethods.Ftp"/> class.
+            Note that the strings defined in the WebRequestMethods.Ftp class are the only supported options for the Method property.
+            Setting the Method property to any other value will result in an <see cref="T:System.ArgumentException"/> exception.</remarks>
+            <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
+            <exception cref="T:System.ArgumentException">The method is invalid.
+            <para>- or -</para>
+            <para>The method is not supported.</para>
+            <para>- or -</para>
+            <para>Multiple methods were specified.</para>
+            </exception>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebRequest.RenameTo">
+            <summary>
+            Gets or sets the new name of a file being renamed.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebRequest.RequestUri">
+            <summary>
+            Gets the URI requested by this instance.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebRequest.UseBinary">
+            <summary>
+            Gets or sets a Boolean value that specifies the data type for file transfers.
+            </summary>
+            <value>true to indicate to the server that the data to be transferred is binary; false to indicate that the data is text.
+            The default value is true.</value>
+            <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
+        </member>
+        <member name="P:InTheHand.Net.FtpWebRequest.UsePassive">
+            <summary>
+            Gets or sets the behavior of a client application's data transfer process.
+            </summary>
+            <value>false if the client application's data transfer process listens for a connection on the data port; otherwise, true if the client should initiate a connection on the data port.
+            The default value is true.</value>
+            <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
+        </member>
+    </members>
+</doc>

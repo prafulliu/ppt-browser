@@ -1,0 +1,24 @@
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\pptPC\obj\Release\pptPC.exe
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\pptPC\obj\Release\pptPC.pdb
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\pptPC\bin\Release\pptPC.exe
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\pptPC\bin\Release\pptPC.pdb
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\pptPC\bin\Release\InTheHand.Net.Personal.dll
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\pptPC\bin\Release\InTheHand.Net.Personal.xml
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\pptPC\obj\Release\ResolveAssemblyReference.cache
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\pptPC\obj\Release\pptPC.PCMainForm.resources
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\pptPC\obj\Release\pptPC.Properties.Resources.resources
+D:\My Documents\Visual Studio 2008\Projects\PPT-Project\Ppt-Mobile\pptPC\obj\Release\ppt-PC.csproj.GenerateResource.Cache
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\pptPC\bin\Release\pptPC.exe
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\pptPC\bin\Release\pptPC.pdb
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\pptPC\bin\Release\InTheHand.Net.Personal.dll
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\pptPC\bin\Release\InTheHand.Net.Personal.xml
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\pptPC\obj\Release\ResolveAssemblyReference.cache
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\pptPC\obj\Release\pptPC.PCMainForm.resources
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\pptPC\obj\Release\pptPC.Properties.Resources.resources
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\pptPC\obj\Release\ppt-PC.csproj.GenerateResource.Cache
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\pptPC\obj\Release\pptPC.exe
+C:\Users\刘鹏飞\Desktop\Ppt-Mobile\pptPC\obj\Release\pptPC.pdb
+C:\Users\lpf\Desktop\Ppt-Mobile\pptPC\obj\Release\pptPC.exe
+C:\Users\lpf\Desktop\Ppt-Mobile\pptPC\obj\Release\pptPC.pdb
+E:\资料\存档\HnuSeeking\SIT\SIT-p2p网络\Ppt-Mobile\pptPC\obj\Release\pptPC.exe
+E:\资料\存档\HnuSeeking\SIT\SIT-p2p网络\Ppt-Mobile\pptPC\obj\Release\pptPC.pdb

@@ -3,7 +3,9 @@
 
 开发者：
 		@kaholai  http://weibo.com/kaholai
+		
 		@郑杰1900 http://weibo.com/u/2252258645
+		
 		prafulliu http://weibo.com/prafulliu
 
 
@@ -11,5 +13,6 @@
 获得中科杯软件大赛三等奖。
 
 http://www.programmer.com.cn/1103/
+
 http://www.is.cas.cn/tpxw/201204/t20120423_3562067.html
 		

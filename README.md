@@ -1,9 +1,10 @@
 
 
 #基于移动设备的PPT 演示标注软件#
-# "PPT Presentation Annotation Software In Windows Mobile Phones"
+#PPT Presentation Annotation Software In Windows Mobile Phones
 
 **开发者：**
+
 **Developers: **
 	
 > [@kaholai](http://weibo.com/kaholai)

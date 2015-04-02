@@ -7,7 +7,7 @@
 
 **Developers: **
 	
-> [@kaholai](http://weibo.com/kaholai)
+> [@kaholai](https://github.com/kaholai/)
 
 > 	[@郑杰1900](http://weibo.com/u/2252258645)
 
